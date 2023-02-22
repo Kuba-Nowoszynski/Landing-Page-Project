@@ -1,0 +1,47 @@
+.features {
+  padding: 1rem 7vw;
+  background: $lightGrayishBlue;
+  @include breakpoint-down(medium) {
+    text-align: center;
+  }
+  .heading {
+    margin-bottom: 3rem;
+    h2 {
+      color: $darkBlue;
+      font-weight: 400;
+      font-size: 2.5rem;
+    }
+    p {
+      line-height: 2rem;
+    }
+  }
+
+  .featureList {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint-down(small) {
+      flex-direction: column;
+    }
+    .feature {
+      flex: 1;
+      @include breakpoint-down(medium) {
+        flex: 0 0 50%;
+      }
+      @include breakpoint-down(small) {
+        flex: 1;
+      }
+      h3 {
+        color: $darkBlue;
+        font-weight: 400;
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 300;
+        max-width: 90%;
+        line-height: 1.7rem;
+      }
+    }
+  }
+}

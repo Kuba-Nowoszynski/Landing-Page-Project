@@ -1,0 +1,127 @@
+.footer {
+  background-color: $darkBlue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 7vw;
+
+  @include breakpoint-down(medium) {
+    flex-direction: column;
+    * {
+      margin: auto;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    * {
+      @include breakpoint-down(medium) {
+        margin-bottom: 1rem;
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  &__logo {
+    margin-bottom: 4rem;
+  }
+
+  &__social-media {
+    a:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+
+    @include breakpoint-up(medium) {
+      margin-left: 3rem;
+    }
+
+    a {
+      svg {
+        height: 100%;
+        min-width: 1.7rem;
+        @include breakpoint-up(medium) {
+          transform: scale(1.5);
+        }
+      }
+      &:hover svg path {
+        transition: fill 0.15s ease-in-out;
+        fill: $brightCyan;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 8%;
+    @include breakpoint-down(medium) {
+      flex: unset;
+      a {
+        font-size: 1.2rem !important;
+      }
+    }
+
+    a {
+      color: $lightGrayishBlue;
+      font-weight: 300;
+      font-size: 1rem;
+      transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+
+      &:hover {
+        color: $brightCyan;
+        // text-shadow: 0 0 1px $brightCyan;
+      }
+    }
+
+    a:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint-up(large) {
+      min-width: 7rem;
+    }
+
+    @include breakpoint-up(xlarge) {
+      margin-left: -15rem;
+    }
+  }
+
+  //not necessary - maybe would use it for grid instead of flex
+  // &.col1 {
+  // }
+
+  // &.col2 {
+  // }
+
+  &__cta {
+    text-align: right;
+
+    @include breakpoint-down(medium) {
+      text-align: center;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 1rem 2.5rem;
+      @include breakpoint-down(medium) {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    h6 {
+      word-wrap: break-word;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+  }
+}

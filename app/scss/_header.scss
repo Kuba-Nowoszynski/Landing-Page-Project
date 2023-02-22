@@ -1,0 +1,111 @@
+.header {
+  nav {
+    padding: 1.1rem;
+    // max-width: 69rem;
+    margin: 0 7vw;
+  }
+
+  //Mobile
+
+  //Hamburger open styles
+  &.open {
+    .header__menu {
+      #close {
+        opacity: 1;
+      }
+      #hamburger {
+        opacity: 0;
+      }
+    }
+  }
+
+  //Default (closed) menu
+  &__menu {
+    * {
+      transition: opacity 0.25s;
+    }
+    #close {
+      position: relative;
+      right: 1.6rem;
+      top: 0.2rem;
+      opacity: 0;
+    }
+  }
+
+  .overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 99;
+    top: 3.5rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+  }
+
+  &__menuLinks {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 99;
+    flex-direction: column;
+    width: 90%;
+    left: 5%;
+    background: white;
+    border-radius: 0.3rem;
+    * {
+      padding: 1.2rem;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0;
+        right: 0;
+        height: 0.4rem;
+        border-radius: 1rem;
+        background: linear-gradient(90deg, $limeGreen, $brightCyan);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $darkBlue;
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  //Desktop
+  &__links {
+    a {
+      font-size: $font-med;
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -1.2rem;
+        left: 0;
+        right: 0;
+        height: 0.5rem;
+        border-radius: 1rem;
+        background: linear-gradient(90deg, $limeGreen, $brightCyan);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $darkBlue;
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
