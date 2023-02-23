@@ -4,7 +4,7 @@ This is a solution to the [Easybank landing page challenge on Frontend Mentor](h
 
 ### Links
 
-- Live Site URL: [Github Pages](https://kuba-nowoszynski.github.io/)
+- Live Site URL: [Github Pages](https://kuba-nowoszynski.github.io/landing-page)
 
 ### Built with
 
